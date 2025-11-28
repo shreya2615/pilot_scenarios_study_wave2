@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voice Pitch Experiment</title>
+
+  <!-- jsPsych CSS -->
+  <link rel="stylesheet" href="jspsych.css">
+
+  <!-- Custom CSS for circle rating buttons -->
+  <style>
+    .circle-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .circle-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .circle-option input[type="radio"] {
+      display: none; /* hide default radio button */
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #333;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 6px;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .circle-option input[type="radio"]:checked + .circle {
+      background-color: #000; /* highlight selected circle */
+      border-color: #000;
+    }
+
+    .circle-label {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Local jsPsych library -->
+  <script src="jspsych.js"></script>
+
+  <!-- Plugins -->
+  <script src="plugins/plugin-html-keyboard-response.js"></script>
+  <script src="plugins/plugin-instructions.js"></script>
+  <script src="plugins/plugin-audio-keyboard-response.js"></script>
+  <script src="plugins/plugin-preload.js"></script>
+  <script src="plugins/plugin-survey-html-form.js"></script>
+  <script src="plugins/plugin-html-button-response.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+  <!-- Your experiment -->
+  <script src="experiment.js"></script>
+
+</body>
+</html>
